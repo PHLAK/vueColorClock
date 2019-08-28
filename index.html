@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="dist/app.js" defer></script>
+<link href="dist/app.css" rel="stylesheet">
+
+<title>vueColorClock</title>
+
+<div id="app" class="bg-gray-600 p-4 h-screen w-screen" v-bind:style="styles">
+    <div class="flex flex-col justify-between border-2 border-white p-2 h-full w-full">
+        <div class="flex justify-between">
+            <a href="" class="text-sm text-white underline">vueColorClock</a>
+
+            <p class="text-sm text-white">
+                A <a href="https://vuejs.org" class="underline">Vue.js</a> clone of
+                <a href="http://thecolourclock.co.uk" class="underline">The Color Clock</a>
+            </p>
+        </div>
+
+        <div id="clock" class="font-mono text-white text-16vw text-center whitespace-no-wrap">
+            <span v-if="mode == 'clock'">{{ time }}</span>
+            <span v-if="mode == 'hex'">{{ hex }}</span>
+        </div>
+
+        <div class="flex justify-between">
+            <div class="text-sm text-white">
+                Mode Togle (Coming Soon)
+            </div>
+
+            <div class="text-sm text-white">
+                &copy; {{ now.getFullYear() }}
+                <a href="https://www.chriskankiewicz.com" class="underline">
+                    Chris Kankiewicz
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
