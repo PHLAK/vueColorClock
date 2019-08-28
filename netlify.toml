@@ -1,0 +1,14 @@
+[build]
+  command = 'npm run production'
+
+[[redirects]]
+  from = 'http://vuecolorclock.netlify.com/*'
+  to = 'https://colorclock.phlak.net/:splat'
+  status = 301
+  force = true
+
+[[redirects]]
+  from = 'http://colorclock.phlak.net/*'
+  to = 'https://colorclock.phlak.net/:splat'
+  status = 301
+  force = true
