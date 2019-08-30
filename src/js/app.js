@@ -1,10 +1,12 @@
 window.Vue = require('vue');
+let { DateTime } = require('luxon');
 
 var app = new Vue({
     el: '#app',
     data: {
         mode: 'clock',
-        now: new Date()
+        now: DateTime.local(),
+        timeFormat: 'hh:mm:ss'
     },
     computed: {
         hex() {
@@ -14,9 +16,9 @@ var app = new Vue({
         },
         rgb() {
             return {
-                r: Math.round(this.now.getHours() * (255 / 23)),
-                g: Math.round(this.now.getMinutes() * (255 / 59)),
-                b: Math.round(this.now.getSeconds() * (255 / 59))
+                r: Math.round(this.now.hour * (255 / 23)),
+                g: Math.round(this.now.minute * (255 / 59)),
+                b: Math.round(this.now.second * (255 / 59))
             };
         },
         styles() {
@@ -25,14 +27,21 @@ var app = new Vue({
             }
         },
         time() {
-            time = [this.now.getHours(), this.now.getMinutes(), this.now.getSeconds()];
-
-            return time.map(value => value.toString().padStart(2, '0')).join(':');
+            return this.now.toFormat(this.timeFormat);
         }
     },
     created() {
         interval = setInterval(() => {
-            this.now = new Date();
+            this.now = DateTime.local();
         }, 1000);
+    },
+    methods: {
+        toggleMode(event) {
+            if (event.target.checked) {
+                console.log('CHECKED!!!');
+            }
+            // window.localStorage.setItem("name", "Obaseki Nosa");
+            console.log(event);
+        }
     }
 });
