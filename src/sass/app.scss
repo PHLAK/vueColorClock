@@ -4,6 +4,8 @@
 
 @import url("https://fonts.googleapis.com/css?family=Fira+Code&display=swap");
 
+@import "toggle.scss";
+
 #app {
     transition: background-color 1s linear;
     background: radial-gradient(

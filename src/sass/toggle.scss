@@ -1,0 +1,49 @@
+.toggle {
+    display: none;
+
+    + .toggle-switch {
+        border: 2px solid #fff;
+        border-radius: 2rem;
+        cursor: pointer;
+        display: inline-block;
+        height: 1.5rem;
+        margin: 0 0.5rem;
+        outline: 0;
+        position: relative;
+        padding: 0.15rem;
+        transition: all 0.2s ease;
+        user-select: none;
+        width: 3rem;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            height: 100%;
+            position: relative;
+            width: 50%;
+        }
+
+        &:after {
+            background: #fff;
+            left: 0;
+            transition: all 0.2s ease;
+            content: "";
+            border-radius: 1rem;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &:checked + .toggle-switch {
+        &:after {
+            left: 50%;
+        }
+    }
+
+    &:checked + .toggle-switch:after {
+        left: 50%;
+    }
+}
