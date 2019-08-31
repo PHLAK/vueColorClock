@@ -9,6 +9,11 @@ var app = new Vue({
         timeFormat: 'hh:mm:ss'
     },
     computed: {
+        appStyles() {
+            return {
+                backgroundColor: `rgb(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b})`
+            };
+        },
         clockButtonStyles() {
             return this.mode != 'clock' ? { backgroundColor: 'rgba(255, 255, 255, .5)' } : {};
         },
@@ -26,11 +31,6 @@ var app = new Vue({
                 g: Math.round(this.now.minute * (255 / 59)),
                 b: Math.round(this.now.second * (255 / 59))
             };
-        },
-        styles() {
-            return {
-                backgroundColor: `rgb(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b})`
-            }
         },
         time() {
             return this.now.toFormat(this.timeFormat);
