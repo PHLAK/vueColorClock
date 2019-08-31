@@ -19,13 +19,13 @@
         </div>
 
         <div class="flex flex-col justify-center items-center inline-block">
-            <div id="clock" class="inline-block font-mono leading-none text-white text-16vw text-center whitespace-no-wrap">
+            <div id="clock" class="inline-block font-mono leading-none text-white text-16vw text-center text-shadow-solid whitespace-no-wrap">
                 <template v-if="mode == 'clock'">{{ time }}</template>
                 <template v-if="mode == 'hex'">{{ hex }}</template>
 
                 <div class="flex justify-center">
-                    <button class="bg-white shadow-solid mx-2 h-1.5vw w-1/2" title="Clock Mode" v-on:click="setMode('clock')"></button>
-                    <button class="bg-white shadow-solid mx-2 h-1.5vw w-1/2" title="Hex Mode" v-on:click="setMode('hex')"></button>
+                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Clock Mode" v-on:click="setMode('clock')"></button>
+                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Hex Mode" v-on:click="setMode('hex')"></button>
                 </div>
             </div>
         </div>

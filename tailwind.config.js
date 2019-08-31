@@ -9,12 +9,6 @@ module.exports = {
             },
             fontSize: {
                 '16vw': '16vw'
-            },
-            height: {
-                '1.5vw': '1.5vw',
-            },
-            textShadow: {
-                solid: '1px 1px 0 rgba(0, 0, 0, 0.5)'
             }
         }
     },
