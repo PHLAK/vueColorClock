@@ -24,8 +24,8 @@
                 <template v-if="mode == 'hex'">{{ hex }}</template>
 
                 <div class="flex justify-center">
-                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Clock Mode" v-on:click="setMode('clock')"></button>
-                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Hex Mode" v-on:click="setMode('hex')"></button>
+                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Clock Mode" v-bind:style="clockButtonStyles" v-on:click="setMode('clock')"></button>
+                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Hex Mode" v-bind:style="hexButtonStyles" v-on:click="setMode('hex')"></button>
                 </div>
             </div>
         </div>

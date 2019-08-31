@@ -9,6 +9,12 @@ var app = new Vue({
         timeFormat: 'hh:mm:ss'
     },
     computed: {
+        clockButtonStyles() {
+            return this.mode != 'clock' ? { backgroundColor: 'rgba(255, 255, 255, .5)' } : {};
+        },
+        hexButtonStyles() {
+            return this.mode !='hex' ? { backgroundColor: "rgba(255, 255, 255, .5)" } : {};
+        },
         hex() {
             return Object.values(this.rgb).map(
                 value => value.toString(16).toUpperCase().padStart(2, '0')
