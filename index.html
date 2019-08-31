@@ -31,11 +31,13 @@
         </div>
 
         <div class="flex justify-between">
-            <div class="flex items-center text-sm text-white">
-                12H
-                <input class="toggle" id="time-format" type="checkbox" v-model="timeFormat" true-value="HH:mm:ss" false-value="hh:mm:ss">
-                <label class="toggle-switch" for="time-format"></label>
-                24H
+            <div>
+                <div  class="flex items-center text-sm text-white" v-if="mode == 'clock'">
+                    12H
+                    <input class="toggle" id="time-format" type="checkbox" v-model="timeFormat" true-value="HH:mm:ss" false-value="hh:mm:ss">
+                    <label class="toggle-switch" for="time-format"></label>
+                    24H
+                </div>
             </div>
 
             <div class="text-sm text-white">
