@@ -36,12 +36,8 @@ var app = new Vue({
         }, 1000);
     },
     methods: {
-        toggleMode(event) {
-            if (event.target.checked) {
-                console.log('CHECKED!!!');
-            }
-            // window.localStorage.setItem("name", "Obaseki Nosa");
-            console.log(event);
+        setMode(mode) {
+            this.mode = mode;
         }
     }
 });

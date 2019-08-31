@@ -18,9 +18,16 @@
             </p>
         </div>
 
-        <div id="clock" class="font-mono text-white text-16vw text-center whitespace-no-wrap">
-            <span v-if="mode == 'clock'">{{ time }}</span>
-            <span v-if="mode == 'hex'">{{ hex }}</span>
+        <div class="flex flex-col justify-center items-center inline-block">
+            <div id="clock" class="inline-block font-mono leading-none text-white text-16vw text-center whitespace-no-wrap">
+                <template v-if="mode == 'clock'">{{ time }}</template>
+                <template v-if="mode == 'hex'">{{ hex }}</template>
+
+                <div class="flex justify-center">
+                    <button class="bg-white shadow-solid mx-2 h-4 w-1/2" title="Clock Mode" v-on:click="setMode('clock')"></button>
+                    <button class="bg-white shadow-solid mx-2 h-4 w-1/2" title="Hex Mode" v-on:click="setMode('hex')"></button>
+                </div>
+            </div>
         </div>
 
         <div class="flex justify-between">
