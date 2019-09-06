@@ -1,6 +1,8 @@
 vueColorClock
 =============
 
+![vueColorClock](screenshot.png)
+
 A [Vue.js](https://vuejs.org) clone of [The Colour Clock](http://thecolourclock.co.uk/), a color changing clock.
 -- by, <a href="https://www.ChrisKankiewicz.com">Chris Kankiewicz</a> (<a href="https://twitter.com/PHLAK">@PHLAK</a>)
 
