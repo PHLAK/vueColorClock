@@ -12,7 +12,7 @@
   "author": "Chris Kankiewicz",
   "license": "MIT",
   "dependencies": {
-    "luxon": "^1.19.3",
+    "luxon": "^1.20.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
