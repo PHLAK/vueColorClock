@@ -37,13 +37,12 @@ var app = new Vue({
         }
     },
     created() {
-        interval = setInterval(() => {
-            this.now = DateTime.local();
-        }, 1000);
+        interval = setInterval(() => this.now = DateTime.local(), 1000);
+        this.mode = localStorage.getItem('mode') || 'clock';
+        this.timeFormat = localStorage.getItem('timeFormat') || 'hh:mm:ss';
     },
-    methods: {
-        setMode(mode) {
-            this.mode = mode;
-        }
+    watch: {
+        mode: mode => localStorage.setItem('mode', mode),
+        timeFormat: format => localStorage.setItem('timeFormat', format)
     }
 });

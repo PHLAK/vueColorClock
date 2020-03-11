@@ -25,8 +25,13 @@
                 <template v-if="mode == 'hex'">{{ hex }}</template>
 
                 <div class="flex justify-center">
-                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Clock Mode" v-bind:style="clockButtonStyles" v-on:click="setMode('clock')"></button>
-                    <button class="bg-white shadow-solid mx-2 w-1/2" title="Hex Mode" v-bind:style="hexButtonStyles" v-on:click="setMode('hex')"></button>
+                    <label for="clock-mode" class="bg-white shadow-solid mx-2 w-1/2 h-2 md:h-4 xl:h-6 cursor-pointer" v-bind:style="clockButtonStyles">
+                        <input type="radio" id="clock-mode" name="mode" value="clock" title="Clock Mode" v-model="mode" class="hidden">
+                    </label>
+
+                    <label for="hex-mode" class="bg-white shadow-solid mx-2 w-1/2 h-2 md:h-4 xl:h-6 cursor-pointer" v-bind:style="hexButtonStyles">
+                        <input type="radio" id="hex-mode" name="mode" value="hex" title="Hex Mode" v-model="mode" class="hidden">
+                    </label>
                 </div>
             </div>
         </div>
