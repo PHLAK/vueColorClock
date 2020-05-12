@@ -1,4 +1,5 @@
 module.exports = {
+    purge: ['index.html', 'src/**/*.scss', 'src/**/*.js'],
     theme: {
         extend: {
             boxShadow: {
