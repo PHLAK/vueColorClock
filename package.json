@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "luxon": "^1.24.1",
-    "vue": "^2.6.11"
+    "vue": "^2.6.12"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
@@ -22,6 +22,6 @@
     "sass": "^1.26.10",
     "sass-loader": "9.0.2",
     "tailwindcss": "^1.6.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   }
 }
