@@ -19,8 +19,8 @@
             </p>
         </div>
 
-        <div class="flex flex-col justify-center items-center inline-block">
-            <div id="clock" class="inline-block font-mono leading-none text-white text-16vw text-center text-shadow-solid whitespace-no-wrap">
+        <div class="flex flex-col justify-center items-center">
+            <div id="clock" class="inline-block font-mono leading-none text-white text-16vw text-center text-shadow-solid whitespace-nowrap">
                 <template v-if="mode == 'clock'">{{ time }}</template>
                 <template v-if="mode == 'hex'">{{ hex }}</template>
 

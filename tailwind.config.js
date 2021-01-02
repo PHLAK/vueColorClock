@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
     purge: ['index.html', 'src/**/*.scss', 'src/**/*.js'],
     theme: {
@@ -6,7 +8,7 @@ module.exports = {
                 solid: '1px 1px 0 rgba(0, 0, 0, 0.5)'
             },
             fontFamily: {
-                mono: ['Fira Code', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
+                mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
             },
             fontSize: {
                 '16vw': '16vw'
