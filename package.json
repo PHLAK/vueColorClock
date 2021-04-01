@@ -14,7 +14,7 @@
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "luxon": "^1.25.0",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.9",
     "vue": "^2.6.12"
   },
   "devDependencies": {
