@@ -18,7 +18,7 @@ new Vue({
             return this.mode != 'clock' ? { backgroundColor: 'rgba(255, 255, 255, .5)' } : {};
         },
         hexButtonStyles() {
-            return this.mode !='hex' ? { backgroundColor: "rgba(255, 255, 255, .5)" } : {};
+            return this.mode !='hex' ? { backgroundColor: 'rgba(255, 255, 255, .5)' } : {};
         },
         hex() {
             return Object.values(this.rgb).map(
@@ -37,12 +37,17 @@ new Vue({
         }
     },
     created() {
-        let interval = setInterval(() => this.now = DateTime.local(), 1000);
+        setInterval(() => this.now = DateTime.local(), 1000);
         this.mode = localStorage.getItem('mode') || 'clock';
         this.timeFormat = localStorage.getItem('timeFormat') || 'hh:mm:ss';
     },
     watch: {
-        mode: mode => localStorage.setItem('mode', mode),
-        timeFormat: format => localStorage.setItem('timeFormat', format)
+        mode: function (mode) {
+            localStorage.setItem('mode', mode);
+        },
+
+        timeFormat: function (format) {
+            localStorage.setItem('timeFormat', format);
+        }
     }
 });
