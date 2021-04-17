@@ -1,7 +1,7 @@
-window.Vue = require('vue');
+import Vue from 'vue';
 let { DateTime } = require('luxon');
 
-var app = new Vue({
+new Vue({
     el: '#app',
     data: {
         mode: 'clock',
