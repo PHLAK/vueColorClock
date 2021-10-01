@@ -22,7 +22,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^7.24.0",
     "eslint-plugin-vue": "^7.9.0",
-    "laravel-mix": "^6.0.16",
+    "laravel-mix": "^6.0.31",
     "resolve-url-loader": "^3.1.2",
     "sass": "^1.32.0",
     "sass-loader": "^11.0.1",
