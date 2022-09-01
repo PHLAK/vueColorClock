@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^10.1.0",
-    "luxon": "^1.25.0",
+    "luxon": "^3.0.3",
     "postcss": "^8.2.2",
     "vue": "^2.6.12"
   },
