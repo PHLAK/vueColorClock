@@ -1,0 +1,19 @@
+.toggle {
+    @apply hidden;
+}
+
+.toggle + .toggle-switch {
+    @apply inline-block border-2 border-white outline-none rounded-full cursor-pointer h-5 w-10 p-[0.15rem] select-none;
+}
+
+.toggle + .toggle-switch:after {
+    @apply block relative bg-white rounded-full transition-all duration-200 content-[""] left-0 h-full w-1/2;
+}
+
+.toggle + .toggle-switch:before {
+    @apply hidden;
+}
+
+.toggle:checked + .toggle-switch:after {
+    @apply left-1/2;
+}

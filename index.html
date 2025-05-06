@@ -3,57 +3,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="dist/app.css" rel="stylesheet">
-<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="/src/images/favicon.png">
+<link rel="stylesheet" href="/src/css/app.css">
 
 <title>vueColorClock • The Color Changing Clock</title>
 
-<div id="app" class="bg-gray-600 p-4 h-screen w-screen" v-bind:style="appStyles">
-    <div class="flex flex-col justify-between border-2 border-white p-2 h-full w-full">
-        <div class="flex justify-between">
-            <a href="https://github.com/PHLAK/vueColorClock" class="text-sm text-white underline">vueColorClock</a>
+<div id="app">
+    <div id="wrapper" class="bg-gray-600 h-screen w-screen p-4 transition duration-1000" :style="{
+        'background-color': `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`
+    }">
+        <div class="flex flex-col justify-between border-2 border-white p-2 h-full w-full">
+            <div class="flex justify-between items-center">
+                <a href="https://github.com/PHLAK/vueColorClock" class="text-sm text-white underline">vueColorClock</a>
 
-            <p class="text-sm text-white">
-                A <a href="https://vuejs.org" class="underline">Vue.js</a> clone of
-                <a href="http://thecolourclock.co.uk" class="underline">The Color Clock</a>
-            </p>
-        </div>
-
-        <div class="flex flex-col justify-center items-center">
-            <div id="clock" class="inline-block font-mono leading-none text-white text-16vw text-center text-shadow-solid whitespace-nowrap">
-                <template v-if="mode == 'clock'">{{ time }}</template>
-                <template v-if="mode == 'hex'">{{ hex }}</template>
-
-                <div class="flex justify-center">
-                    <label for="clock-mode" class="bg-white shadow-solid mx-2 w-1/2 h-2 md:h-4 xl:h-6 cursor-pointer" v-bind:style="clockButtonStyles">
-                        <input type="radio" id="clock-mode" name="mode" value="clock" title="Clock Mode" v-model="mode" class="hidden">
-                    </label>
-
-                    <label for="hex-mode" class="bg-white shadow-solid mx-2 w-1/2 h-2 md:h-4 xl:h-6 cursor-pointer" v-bind:style="hexButtonStyles">
-                        <input type="radio" id="hex-mode" name="mode" value="hex" title="Hex Mode" v-model="mode" class="hidden">
-                    </label>
-                </div>
+                <p class="text-sm text-white">
+                    A <a href="https://vuejs.org" class="underline">Vue.js</a> recreation of
+                    <a href="http://www.thecolourclock.com" class="underline">The Color Clock</a>
+                </p>
             </div>
-        </div>
 
-        <div class="flex justify-between">
-            <div>
-                <div  class="flex items-center text-sm text-white" v-if="mode == 'clock'">
-                    12H
-                    <input class="toggle" id="time-format" type="checkbox" v-model="timeFormat" true-value="HH:mm:ss" false-value="hh:mm:ss">
-                    <label class="toggle-switch" for="time-format"></label>
-                    24H
+            <div class="flex flex-col justify-center items-center">
+                <div class="inline-block font-courier-prime leading-none text-white text-[16vw] text-center text-shadow-md whitespace-nowrap">
+                    <template v-if="mode === 'time'">{{ time }}</template>
+                    <template v-if="mode === 'hex'">{{ hex }}</template>
+
+                    <div class="flex justify-center">
+                        <label for="time-mode" title="Time Mode" class="bg-white/50 shadow rounded mx-2 w-1/2 h-2 md:h-4 xl:h-6 cursor-pointer" :class="{ 'bg-white/100': mode === 'time' }">
+                            <input type="radio" v-model="mode" value="time" id="time-mode" class="hidden">
+                        </label>
+
+                        <label for="hex-mode" title="Hex Mode" class="bg-white/50 shadow rounded mx-2 w-1/2 h-2 md:h-4 xl:h-6 cursor-pointer" :class="{ 'bg-white/100': mode === 'hex' }">
+                            <input type="radio" v-model="mode" value="hex" id="hex-mode" class="hidden">
+                        </label>
+                    </div>
                 </div>
             </div>
 
-            <div class="text-sm text-white">
-                &copy; {{ now.year }}
-                <a href="https://www.chriskankiewicz.com" class="underline">
-                    Chris Kankiewicz
-                </a>
+            <div class="flex justify-between items-center">
+                <div>
+                    <div class="flex items-center gap-2 text-sm text-white" v-if="mode === 'time'">
+                        12H
+                        <input type="checkbox" v-model="format" true-value="HH:mm:ss" false-value="hh:mm:ss" id="time-format" class="toggle">
+                        <label for="time-format" class="toggle-switch" ></label>
+                        24H
+                    </div>
+                </div>
+
+                <div class="text-sm text-white">
+                    &copy; {{ now.year }}
+                    <a href="https://www.chriskankiewicz.com" class="underline">
+                        Chris Kankiewicz
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="dist/app.js"></script>
+<script type="module" src="/src/js/app.js"></script>

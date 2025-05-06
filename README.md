@@ -31,15 +31,11 @@ Building
 
 ### Build for local development
 
-    npm run development
-
-or recompile on changes with
-
-    npm run watch
+    npm run dev
 
 ### Build for production
 
-    npm run production
+    npm run build
 
 Copyright
 ---------
