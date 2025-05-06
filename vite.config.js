@@ -8,8 +8,6 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': '/src/js',
-            '@vendor': '/vendor',
             vue: 'vue/dist/vue.esm-bundler.js'
         }
     }
