@@ -12,7 +12,7 @@ vueColorClock
 
 <p align="center">
     A <a href="https://vuejs.org">Vue.js</a> clone of <a href="http://www.thecolourclock.com">The Colour Clock</a>, a color changing clock.
-    -- by, <a href="https://www.ChrisKankiewicz.com">Chris Kankiewicz</a> (<a href="https://twitter.com/PHLAK">@PHLAK</a>)
+    -- by, <a href="https://www.ChrisKankiewicz.com">Chris Kankiewicz</a> (<a href="https://bsky.app/profile/phlak.dev">@phlak.dev</a>)
 </p>
 
 Requirements
