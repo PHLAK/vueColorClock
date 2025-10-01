@@ -10,7 +10,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "luxon": "^3.7.1",
+        "luxon": "^3.7.2",
         "vue": "^3.5.18"
     },
     "devDependencies": {
